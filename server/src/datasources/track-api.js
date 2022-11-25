@@ -25,6 +25,10 @@ class TrackAPI extends RESTDataSource {
   getAuthor(authorId) {
     return this.get(`author/${encodeURIComponent(authorId)}`);
   }
+
+  incrementTrackViews(trackId) {
+    return this.patch(`track/${trackId}/numberOfViews`);
+  }
 }
 
 module.exports = TrackAPI;
